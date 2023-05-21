@@ -1,0 +1,41 @@
+### CREATE A NEW USER
+POST http://localhost:3030/auth/signup
+content-type: application/json
+
+{
+ "email":"akash@test.com",
+ "password":"12345678",
+ "admin":false
+}
+
+### SIGNIN A USER
+POST http://localhost:3030/auth/signin
+content-type: application/json
+
+{
+ "email":"test@test.com",
+ "password":"1234asdf"
+}
+
+### Find the currently logged in user
+GET http://localhost:3030/auth/whoami
+
+### Signout
+POST http://localhost:3030/auth/signout
+
+### Find the User with ID
+Get http://localhost:3030/auth/2
+
+### Find the user with email as quert param
+Get http://localhost:3030/auth?email=asdf@asf.com
+
+### Remove the user with ID
+DELETE http://localhost:3030/auth/1
+
+### Update the user with ID and updatind feilds
+PATCH http://localhost:3030/auth/2
+Content-Type: "application/json"
+
+{
+ email:"akash@gmail.com"
+}
